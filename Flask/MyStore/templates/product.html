@@ -1,0 +1,25 @@
+<!-- templates/product.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="product-detail">
+    <div class="gallery">
+        {% for img in prod.images %}
+        <input type="radio" id="img{{ loop.index }}" name="gallery" {% if loop.first %}checked{% endif %}>
+        <label for="img{{ loop.index }}">&#9679;</label>
+        {% endfor %}
+        {% for img in prod.images %}
+        <img src="{{ img }}" alt="{{ prod.name }} {{ loop.index }}" class="gallery-img">
+        {% endfor %}
+    </div>
+    <h1 class="product-name">{{ prod.name }}</h1>
+    <p>{{ prod.description }}</p>
+    <p>Цена: ${{ prod.price }}</p>
+    <section class="reviews">
+        <h2>Отзывы</h2>
+        {% for rev in prod.reviews %}
+        <p>{{ rev }}</p>
+        {% endfor %}
+    </section>
+</div>
+{% endblock %}

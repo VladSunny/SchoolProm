@@ -1,0 +1,53 @@
+<!-- templates/category.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<header class="cat-header" style="background: linear-gradient(to right, blue, purple);">
+    <img src="{{ cat.icon }}" alt="{{ cat.name }}">
+    <h1>{{ cat.name }} ({{ cat.products|length }})</h1>
+</header>
+<div class="filters">
+    <!-- Non-functional filters -->
+    <div class="price-filter">
+        <label>Цена: <input type="range" min="0" max="2000"></label>
+    </div>
+    <div class="brand-filter">
+        <button>Apple</button>
+        <button>Samsung</button>
+        <!-- etc -->
+    </div>
+    <div class="rating-filter">
+        ★★★★☆
+    </div>
+    <div class="sorting">
+        <select>
+            <option>Популярные</option>
+            <option>Новинки</option>
+            <option>Цена ↑</option>
+            <option>Цена ↓</option>
+        </select>
+    </div>
+    <p>Найдено: {{ cat.products|length }}</p>
+</div>
+<div class="view-switch">
+    <a href="/category/{{ cat_id }}?view=grid&page={{ page }}">Сетка</a>
+    <a href="/category/{{ cat_id }}?view=list&page={{ page }}">Список</a>
+</div>
+<div class="products {{ view }}">
+    {% for prod in products %}
+    <div class="product-card {% if prod.hit %}hit{% endif %}">
+        <a href="/product/{{ cat_id }}/{{ prod.id }}">
+            <img src="{{ prod.images[0] }}" alt="{{ prod.name }}">
+            <h3>{{ prod.name }}</h3>
+            <p>Цена: ${{ prod.price }}</p>
+            <p>На складе: {{ prod.stock }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<div class="pagination">
+    {% for p in range(1, total_pages + 1) %}
+    <a href="/category/{{ cat_id }}?view={{ view }}&page={{ p }}" {% if p == page %}class="active"{% endif %}>{{ p }}</a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!-- templates/comparison.html -->
+{% extends "base.html" %}
+
+{% set need_js = true %}
+
+{% block content %}
+<h1 class="comp-title">Сравнение товаров в категории {{ cat_name }}</h1>
+<table class="comparison-table">
+    <thead>
+        <tr>
+            <th>Параметр</th>
+            {% for prod in products %}
+            <th class="{% if prod.price == min_price %}cheapest{% endif %}">
+                <img src="{{ prod.images[0] }}" alt="{{ prod.name }}">
+                {{ prod.name }}
+            </th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="highlight">
+            <td>Цена</td>
+            {% for prod in products %}
+            <td class="{% if prod.price == min_price %}cheapest{% endif %}">${{ prod.price }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>Количество отзывов</td>
+            {% for prod in products %}
+            <td class="{% if prod.price == min_price %}cheapest{% endif %}">{{ prod.reviews_count }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>Количество фото</td>
+            {% for prod in products %}
+            <td class="{% if prod.price == min_price %}cheapest{% endif %}">{{ prod.photos_count }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

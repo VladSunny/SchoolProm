@@ -1,0 +1,68 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechShop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/images/logo.png" alt="TechShop Logo">
+            <span>TechShop</span>
+        </div>
+        <a href="/cabinet" class="cabinet-link">Личный кабинет</a>
+        <div class="slideshow">
+            <div class="slide" style="background: linear-gradient(to right, red, orange);">
+                <p>Акция: Скидка 20% на iPhone!</p>
+            </div>
+            <div class="slide" style="background: radial-gradient(circle, blue, purple);">
+                <p>Акция: Бесплатная доставка на laptops!</p>
+            </div>
+            <div class="slide" style="background: linear-gradient(to bottom, green, yellow);">
+                <p>Акция: Подарок при покупке Pixel!</p>
+            </div>
+            <div class="slideshow-buttons">
+                <a href="#slide1">&#9679;</a>
+                <a href="#slide2">&#9679;</a>
+                <a href="#slide3">&#9679;</a>
+            </div>
+        </div>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="?lang=ru">RU</a> | <a href="?lang=en">EN</a></li>
+            {% for cat_id, cat in categories.items() %}
+            <li>
+                <img src="{{ cat.icon }}" alt="{{ cat.name }} icon" class="cat-icon">
+                <a href="/category/{{ cat_id }}">{{ cat.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Автор: Ваше Имя</p>
+        <div class="sponsors">
+            <div class="column">
+                <img src="/static/images/sponsor1.png" alt="Sponsor 1">
+                <img src="/static/images/sponsor2.png" alt="Sponsor 2">
+                <img src="/static/images/sponsor3.png" alt="Sponsor 3">
+            </div>
+            <div class="column">
+                <img src="/static/images/sponsor4.png" alt="Sponsor 4">
+                <img src="/static/images/sponsor5.png" alt="Sponsor 5">
+                <img src="/static/images/sponsor6.png" alt="Sponsor 6">
+            </div>
+        </div>
+        <a href="https://t.me/techshop">Telegram канал</a>
+    </footer>
+    {% if need_js %}
+    <script src="/static/script.js"></script>
+    {% endif %}
+</body>
+</html>
