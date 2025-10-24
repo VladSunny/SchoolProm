@@ -1,0 +1,16 @@
+.KE_design {
+    color: #660099;
+    font-size: 5em;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+.BigBlue {
+    color: rgb(25, 25, 155);
+    font-size: 10rem;
+}
+h2 {
+    color: green;
+    font-size: 35px;
+    font-family: Arial, Verdana, sans-serif;
+    text-align: right;
+}
