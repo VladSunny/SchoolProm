@@ -268,11 +268,16 @@ footer {
     border-radius: 10px;
 }
 /* To show selected image */
-.gallery input:nth-of-type(1):checked ~ .gallery-img:nth-of-type(1) { opacity: 1; }
-.gallery input:nth-of-type(2):checked ~ .gallery-img:nth-of-type(2) { opacity: 1; }
-.gallery input:nth-of-type(3):checked ~ .gallery-img:nth-of-type(3) { opacity: 1; }
-.gallery input:nth-of-type(4):checked ~ .gallery-img:nth-of-type(4) { opacity: 1; }
-.gallery input:nth-of-type(5):checked ~ .gallery-img:nth-of-type(5) { opacity: 1; }
+.gallery input:nth-of-type(1):checked ~ .gallery-img:nth-of-type(1),
+.gallery input:nth-of-type(1):checked ~ .gallery-nav ~ .gallery-img:nth-of-type(1) { opacity: 1; }
+.gallery input:nth-of-type(2):checked ~ .gallery-img:nth-of-type(2),
+.gallery input:nth-of-type(2):checked ~ .gallery-nav ~ .gallery-img:nth-of-type(2) { opacity: 1; }
+.gallery input:nth-of-type(3):checked ~ .gallery-img:nth-of-type(3),
+.gallery input:nth-of-type(3):checked ~ .gallery-nav ~ .gallery-img:nth-of-type(3) { opacity: 1; }
+.gallery input:nth-of-type(4):checked ~ .gallery-img:nth-of-type(4),
+.gallery input:nth-of-type(4):checked ~ .gallery-nav ~ .gallery-img:nth-of-type(4) { opacity: 1; }
+.gallery input:nth-of-type(5):checked ~ .gallery-img:nth-of-type(5),
+.gallery input:nth-of-type(5):checked ~ .gallery-nav ~ .gallery-img:nth-of-type(5) { opacity: 1; }
 /* Add more if products have more than 5 images */
 .gallery-img:hover { transform: scale(1.05); }
 .product-name {

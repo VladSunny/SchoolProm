@@ -4,9 +4,11 @@
 {% block content %}
 <div class="product-detail">
     <div class="gallery">
+        {% for img in prod.images %}
+        <input type="radio" id="img{{ loop.index }}" name="gallery" {% if loop.first %}checked{% endif %}>
+        {% endfor %}
         <div class="gallery-nav">
             {% for img in prod.images %}
-            <input type="radio" id="img{{ loop.index }}" name="gallery" {% if loop.first %}checked{% endif %}>
             <label for="img{{ loop.index }}">&#9679;</label>
             {% endfor %}
         </div>

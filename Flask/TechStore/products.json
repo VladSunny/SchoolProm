@@ -71,7 +71,7 @@
             },
             {
                 "id": 2,
-                "netru": "Dell XPS",
+                "name": "Dell XPS",
                 "price": 1200,
                 "stock": 12,
                 "images": ["/static/images/xps-1.jpg", "/static/images/xps-2.jpg", "/static/images/xps-3.jpg"],
