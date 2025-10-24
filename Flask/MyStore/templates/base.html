@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href='/'>
+        <a href='/'>
+            <div class="logo">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/006/298/276/small/gear-smart-eps-icon-digital-tech-business-logo-free-vector.jpg" alt="TechShop Logo">
-            </a>
-            <span>TechShop</span>
-        </div>
+                <span>TechShop</span>
+            </div>
+        </a>
         <a href="/cabinet" class="cabinet-link">Личный кабинет</a>
         <div class="slideshow">
             <div class="slide" style="background: linear-gradient(to right, red, orange);">
@@ -38,7 +38,7 @@
             <li><a href="?lang=ru">RU</a> | <a href="?lang=en">EN</a></li>
             {% for cat_id, cat in categories.items() %}
             <li>
-                <img src="{{ cat.icon }}" alt="{{ cat.name }} icon" class="cat-icon">
+                <img src="{{ cat.icon }}" alt="{{ cat.name }} icon" class="cat-icon icon-small">
                 <a href="/category/{{ cat_id }}">{{ cat.name }}</a>
             </li>
             {% endfor %}
@@ -51,14 +51,14 @@
         <p>Автор: Владислав Сунгуров 10г</p>
         <div class="sponsors">
             <div class="column">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="Google">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png" alt="Amazon">
-                <img src="https://img.icons8.com/color/600/ozon.png" alt="Ozon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="Google" class="sponsor-icon icon-large">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png" alt="Amazon" class="sponsor-icon icon-large">
+                <img src="https://img.icons8.com/color/600/ozon.png" alt="Ozon" class="sponsor-icon icon-large">
             </div>
             <div class="column">
-                <img src="https://images.shoutwiki.com/jojoss/7/7d/Unit_Speedwagon_%28R%29.png" alt="Speedwagon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" alt="Max">
-                <img src="https://a.espncdn.com/i/teamlogos/nba/500-dark/chi.png" alt="Chicago Bulls">
+                <img src="https://images.shoutwiki.com/jojoss/7/7d/Unit_Speedwagon_%28R%29.png" alt="Speedwagon" class="sponsor-icon icon-large">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" alt="Max" class="sponsor-icon icon-large">
+                <img src="https://a.espncdn.com/i/teamlogos/nba/500-dark/chi.png" alt="Chicago Bulls" class="sponsor-icon icon-large">
             </div>
         </div>
         <a href="https://t.me/techshop">Telegram канал</a>

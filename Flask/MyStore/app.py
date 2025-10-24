@@ -1,4 +1,4 @@
-# app.py
+# app.py (updated to add cabinet route)
 from flask import Flask, render_template, request, json
 import os
 
@@ -44,6 +44,10 @@ def comparison():
     products = cat['products']
     min_price = min(p['price'] for p in products)
     return render_template('comparison.html', products=products, min_price=min_price, cat_name=cat['name'], categories=categories)
+
+@app.route('/cabinet')
+def cabinet():
+    return render_template('cabinet.html', categories=categories)
 
 if __name__ == '__main__':
     app.run(debug=True)

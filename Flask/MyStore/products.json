@@ -1,7 +1,7 @@
 {
     "smartphones": {
         "name": "Smartphones",
-        "icon": "/static/images/smartphone-icon.png",
+        "icon": "https://cdn-icons-png.flaticon.com/512/864/864343.png",
         "products": [
             {
                 "id": 1,
@@ -55,7 +55,7 @@
     },
     "laptops": {
         "name": "Laptops",
-        "icon": "/static/images/laptop-icon.png",
+        "icon": "https://images.vexels.com/media/users/3/157345/isolated/preview/934008c8466ce089e15947cec0a7c61d-flat-laptop-icon-laptop.png",
         "products": [
             {
                 "id": 1,
