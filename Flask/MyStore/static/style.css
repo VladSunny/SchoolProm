@@ -17,7 +17,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
 .logo span {
     font-weight: bold;
     background: linear-gradient(to right, blue, purple);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 .logo:hover { transform: scale(1.05); }
